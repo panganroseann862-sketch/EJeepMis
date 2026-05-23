@@ -1,0 +1,81 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    
+    --color-navy-900: #000066;
+    --color-navy-800: #000080;
+    --color-navy-700: #0000a0;
+    --color-navy-600: #0000cc;
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+}
+
+.animate-slide-in-left {
+    animation: slideInLeft 0.5s ease-out;
+}
+
+/* Staggered animation for nav items */
+.nav-link {
+    animation: slideInLeft 0.5s ease-out backwards;
+}
+
+.nav-link:nth-child(1) { animation-delay: 0.05s; }
+.nav-link:nth-child(2) { animation-delay: 0.1s; }
+.nav-link:nth-child(3) { animation-delay: 0.15s; }
+.nav-link:nth-child(4) { animation-delay: 0.2s; }
+.nav-link:nth-child(5) { animation-delay: 0.25s; }
+.nav-link:nth-child(6) { animation-delay: 0.3s; }
+.nav-link:nth-child(7) { animation-delay: 0.35s; }
+.nav-link:nth-child(8) { animation-delay: 0.4s; }
+.nav-link:nth-child(9) { animation-delay: 0.45s; }
+.nav-link:nth-child(10) { animation-delay: 0.5s; }
+
+/* Smooth transitions */
+* {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
